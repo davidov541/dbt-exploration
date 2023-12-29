@@ -1,0 +1,18 @@
+databaseType = "Snowflake"
+name = "portfolio-tracking"
+id = "884ecc61-1d01-4d12-aac9-748fbb2256e9"
+
+[flywayDesktop]
+developmentEnvironment = "development"
+shadowEnvironment = "shadow"
+schemaModel = "./schema-model"
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[flyway]
+mixed = true
+outOfOrder = true
+locations = ["filesystem:migrations"]
+validateMigrationNaming = true
+check = {majorTolerance = 0}
