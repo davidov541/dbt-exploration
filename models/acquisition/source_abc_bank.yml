@@ -1,6 +1,0 @@
-version: 2
-sources:
-    - name: abc_bank
-      schema: LANDING
-      tables:
-        - name: ABC_BANK_POSITION
