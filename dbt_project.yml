@@ -33,3 +33,6 @@ models:
     acquisition:
       +materialized: table
       +schema: acquisition
+    presentation:
+      +materialized: table
+      +schema: presentation
