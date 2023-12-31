@@ -24,11 +24,10 @@ CREATE OR REPLACE TABLE ABC_BANK_POSITION (
     quantity NUMBER(38, 0),
     cost_base NUMBER(38, 5),
     position_value NUMBER(38, 5),
-    currency TEXT
+    currency TEXT,
+    ordinal_position TEXT
 )
 STAGE_FILE_FORMAT = ABC_BANK_CSV_FILE_FORMAT;
 
-PUT 'file://${projectDirectory}/data/ABC_Bank_PORTFOLIO__2021-04-09.csv' @%ABC_BANK_POSITION;
+PUT 'file://${projectDirectory}/data/ABC_Bank_PORTFOLIO__2021-04-11.csv' @%ABC_BANK_POSITION;
 COPY INTO ABC_BANK_POSITION;
-
-
