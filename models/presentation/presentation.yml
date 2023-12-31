@@ -1,19 +1,19 @@
 version: 2
 models:
-    - name: REF_POSITION_ABC_BANK
-      description: The positions we have in the ABC Bank portfolio.
+    - name: FACT_POSITION
+      description: Fact table containing positions across all accounts.
       columns:
         - name: ACCOUNT_CODE
-          description: The code for the account at ABC Bank.
+          description: The code for the account.
           tests:
             - not_null
         - name: SECURITY_CODE
-          description: The symbol of the security at ABC Bank.
+          description: The symbol of the security.
           tests:
             - not_null
             - unique
         - name: SECURITY_NAME
-          description: The name of the security at ABC Bank.
+          description: The name of the security.
           tests:
             - not_null
         - name: EXCHANGE_CODE
@@ -24,7 +24,7 @@ models:
             - not_null
         - name: REPORT_DATE
           description: >
-            The date the report was extracted by ABC Bank.
+            The date the report was extracted.
             We consider this position to be effective from
             this date forward, until a change is seen.
           tests:
@@ -32,7 +32,7 @@ models:
         - name: QUANTITY
           description: >
             The number of securities we hold in the
-            portfolio at ABC Bank at the Report Date
+            portfolio at the Report Date
           tests:
             - not_null
         - name: COST_BASE
@@ -45,7 +45,7 @@ models:
         - name: POSITION_VALUE
           description: >
             The value of the securities in the portfolio
-            at ABC Bank on the Report Date.
+            on the Report Date.
           tests:
             - not_null
         - name: CURRENCY_CODE

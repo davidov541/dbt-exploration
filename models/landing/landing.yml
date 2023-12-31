@@ -1,7 +1,7 @@
 version: 2
 models:
-    - name: REF_POSITION_ABC_BANK
-      description: The positions we have in the ABC Bank portfolio.
+    - name: STG_ABC_BANK_POSITION
+      description: An ephemeral model used for generating the history table in landing.
       columns:
         - name: ACCOUNT_CODE
           description: The code for the account at ABC Bank.
@@ -57,11 +57,3 @@ models:
           tests:
             - not_null
             - unique
-        - name: UNREALIZED_PROFIT
-          description: The unrealized profit on the position
-          tests:
-            - not_null
-        - name: UNREALIZED_PROFIT_PCT
-          description: The unrealized profit percentage on the position
-          tests:
-            - not_null
