@@ -2,7 +2,7 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 name: 'portfolio_tracking'
-version: '1.0.0'
+version: '1.1.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
@@ -30,9 +30,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   portfolio_tracking:
+    landing:
+      +materialized: ephemeral
+      +schema: LANDING
     acquisition:
       +materialized: table
-      +schema: acquisition
+      +schema: ACQUISITION
     presentation:
       +materialized: table
-      +schema: presentation
+      +schema: PRESENTATION
+
+snapshots:
+  portfolio_tracking:
+    +target_schema: LANDING
