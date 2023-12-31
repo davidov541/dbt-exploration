@@ -33,13 +33,21 @@ models:
     landing:
       +materialized: ephemeral
       +schema: LANDING
+      +contract:
+        +enforced: true
     acquisition:
       +materialized: table
       +schema: ACQUISITION
+      +contract:
+        +enforced: true
     presentation:
       +materialized: table
       +schema: PRESENTATION
+      +contract:
+        +enforced: true
 
 snapshots:
   portfolio_tracking:
     +target_schema: LANDING
+    +contract:
+      +enforced: true

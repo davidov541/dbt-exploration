@@ -57,3 +57,35 @@ models:
           tests:
             - not_null
             - unique
+        - name: POSITION_HKEY
+          description: Hash key identifying the keys of a given row. For internal use only.
+          tests:
+            - not_null
+        - name: POSITION_HDIFF
+          description: Hash key identifying the values that identify the version of a given row. For internal use only.
+          tests:
+            - not_null
+        - name: RECORD_SOURCE
+          description: Source that this row came from. For internal use only.
+          tests:
+            - not_null
+        - name: LOAD_TS_UTC
+          description: Timestamp when this data was loaded For internal use only.
+          tests:
+            - not_null
+        - name: DBT_SCD_ID
+          description: ID for each individual row. For internal use only.
+          tests:
+            - not_null
+        - name: DBT_UPDATED_AT
+          description: Timestamp when this row was last updated. For internal use only.
+          tests:
+            - not_null
+        - name: DBT_VALID_FROM
+          description: Timestamp when this row was first created. For internal use only.
+          tests:
+            - not_null
+        - name: DBT_VALID_TO
+          description: Timestamp when this row was no longer valid, or null if currently valid. For internal use only.
+          tests:
+            - not_null

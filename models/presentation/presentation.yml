@@ -52,11 +52,6 @@ models:
           description: The currency for the monetary amounts of the position.
           tests:
             - not_null
-        - name: ORDINAL_POSITION
-          description: The position of the row within the table.
-          tests:
-            - not_null
-            - unique
         - name: UNREALIZED_PROFIT
           description: The unrealized profit on the position
           tests:
