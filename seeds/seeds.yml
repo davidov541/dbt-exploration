@@ -1,4 +1,32 @@
 version: 2
 seeds:
-    - name: ABC_BANK_SECURITY_INFO
-    - name: ABC_BANK_EXCHANGE_INFO
+  - name: ABC_BANK_SECURITY_INFO
+    config:
+      column_types:
+        SECURITY_CODE: STRING
+        SECUIRTY_NAME: STRING
+        SECTOR: STRING
+        INDUSTRY: STRING
+        COUNTRY: STRING
+        EXCHANGE: STRING
+        LOAD_TS: TIMESTAMP
+  - name: ABC_BANK_EXCHANGE_INFO
+    config:
+      column_types:
+        EXCHANGE_CODE: STRING
+        EXCHANGE_NAME: STRING
+        COUNTRY: STRING
+        CITY: STRING
+        TRADING_START: STRING
+        TRADING_END: STRING
+        TIMEZONE: STRING
+        LOAD_TS: TIMESTAMP
+  - name: COUNTRY_INFO
+    config:
+      column_types:
+        TWO_COUNTRY_CODE: STRING
+        THREE_COUNTRY_CODE: STRING
+        FULL_NAME: STRING
+        REGION: STRING
+        SUB_REGION: STRING
+        LOAD_TS: TIMESTAMP

@@ -54,29 +54,5 @@ snapshots:
 
 seeds:
   +schema: LANDING
-  portfolio_tracking:
-    ABC_BANK_SECURITY_INFO:
-      +quote_columns: true
-      +column_types:
-        SECURITY_CODE: STRING
-        SECUIRTY_NAME: STRING
-        SECTOR: STRING
-        INDUSTRY: STRING
-        COUNTRY: STRING
-        EXCHANGE: STRING
-        LOAD_TS: TIMESTAMP
-      +post-hook:
-        - "UPDATE {{ this }} SET LOAD_TS = '{{ run_started_at }}' WHERE LOAD_TS IS NULL"
-    ABC_BANK_EXCHANGE_INFO:
-      +quote_columns: true
-      +column_types:
-        EXCHANGE_CODE: STRING
-        EXCHANGE_NAME: STRING
-        COUNTRY: STRING
-        CITY: STRING
-        TRADING_START: STRING
-        TRADING_END: STRING
-        TIMEZONE: STRING
-        LOAD_TS: TIMESTAMP
-      +post-hook:
-        - "UPDATE {{ this }} SET LOAD_TS = '{{ run_started_at }}' WHERE LOAD_TS IS NULL"
+  +post-hook: "UPDATE {{ this }} SET LOAD_TS = '{{ run_started_at }}' WHERE LOAD_TS IS NULL"
+  +quote_columns: true
