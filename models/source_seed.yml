@@ -1,0 +1,6 @@
+version: 2
+sources:
+  - name: seeds
+    schema: "PROCESSED_LANDING"
+    tables:
+      - name: ABC_BANK_SECURITY_INFO
