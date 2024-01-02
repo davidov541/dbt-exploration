@@ -1,7 +1,7 @@
 version: 2
 sources:
     - name: abc_bank
-      schema: LANDING
+      schema: PROCESSED_LANDING
       tables:
         - name: ABC_BANK_POSITION
           description: >
