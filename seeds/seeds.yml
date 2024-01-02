@@ -30,3 +30,11 @@ seeds:
         REGION: STRING
         SUB_REGION: STRING
         LOAD_TS: TIMESTAMP
+  - name: CURRENCY_INFO
+    config:
+      column_types:
+        CURRENCY_CODE: STRING
+        FULL_NAME: STRING
+        SYMBOL: STRING
+        COUNTRY: STRING
+        LOAD_TS: TIMESTAMP

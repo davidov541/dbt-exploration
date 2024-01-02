@@ -53,6 +53,7 @@ snapshots:
       +enforced: true
 
 seeds:
-  +schema: LANDING
-  +post-hook: "UPDATE {{ this }} SET LOAD_TS = '{{ run_started_at }}' WHERE LOAD_TS IS NULL"
-  +quote_columns: true
+  portfolio_tracking:
+    +schema: LANDING
+    +post-hook: "UPDATE {{ this }} SET LOAD_TS = '{{ run_started_at }}' WHERE LOAD_TS IS NULL"
+    +quote_columns: true
