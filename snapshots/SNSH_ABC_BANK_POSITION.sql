@@ -4,7 +4,7 @@
     config(
       unique_key= 'POSITION_HKEY',
       strategy='check',
-      target_schema='LANDING',
+      target_schema='PROCESSED_LANDING',
       check_cols=['POSITION_HDIFF'],
       invalidate_hard_deletes=True,
     )

@@ -48,6 +48,22 @@ models:
 
 snapshots:
   portfolio_tracking:
-    +target_schema: LANDING
+    +target_schema: PROCESSED_LANDING
     +contract:
       +enforced: true
+
+seeds:
+  +schema: LANDING
+  portfolio_tracking:
+    ABC_BANK_SECURITY_INFO:
+      +quote_columns: true
+      +column_types:
+        SECURITY_CODE: STRING
+        SECUIRTY_NAME: STRING
+        SECTOR: STRING
+        INDUSTRY: STRING
+        COUNTRY: STRING
+        EXCHANGE: STRING
+        LOAD_TS: TIMESTAMP
+      +post-hook:
+        - "UPDATE {{ this }} SET LOAD_TS = '{{ run_started_at }}' WHERE LOAD_TS IS NULL"
