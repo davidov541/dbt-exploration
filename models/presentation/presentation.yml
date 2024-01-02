@@ -60,7 +60,7 @@ models:
           description: The unrealized profit percentage on the position
           tests:
             - not_null
-    - name: REF_ABC_BANK_SECURITY_INFO
+    - name: DIM_SECURITY
       description: A history table for the securities dimension information from ABC Bank.
       columns:
         - name: SECURITY_CODE
@@ -95,6 +95,54 @@ models:
           tests:
             - not_null
         - name: SECURITY_HDIFF
+          description: Hash key identifying the values that identify the version of a given row. For internal use only.
+          tests:
+            - not_null
+        - name: RECORD_SOURCE
+          description: Source that this row came from. For internal use only.
+          tests:
+            - not_null
+        - name: LOAD_TS_UTC
+          description: Timestamp when this data was loaded For internal use only.
+          tests:
+            - not_null
+    - name: DIM_EXCHANGE
+      description: A presentation table for the exchange dimension information from ABC Bank.
+      columns:
+        - name: EXCHANGE_CODE
+          description: The symbol of this exchange.
+          tests:
+            - not_null
+            - unique
+        - name: EXCHANGE_NAME
+          description: The name of this exchange.
+          tests:
+            - not_null
+        - name: COUNTRY_CODE
+          description: The country in which this exchange is based.
+          tests:
+            - not_null
+        - name: CITY_NAME
+          description: The city in which this exchange is based.
+          tests:
+            - not_null
+        - name: TRADING_START_TIME
+          description: The local time at which point the exchange opens trading.
+          tests:
+            - not_null
+        - name: TRADING_END_TIME
+          description: The local time at which point the exchange closes trading.
+          tests:
+            - not_null
+        - name: TRADING_TIME_ZONE
+          description: The time zone which trading hours are conducted in.
+          tests:
+            - not_null
+        - name: EXCHANGE_HKEY
+          description: Hash key identifying the keys of a given row. For internal use only.
+          tests:
+            - not_null
+        - name: EXCHANGE_HDIFF
           description: Hash key identifying the values that identify the version of a given row. For internal use only.
           tests:
             - not_null
