@@ -12,6 +12,9 @@ models:
           tests:
             - not_null
             - unique
+            - relationships:
+                to: ref('REF_ABC_BANK_SECURITY_INFO')
+                field: SECURITY_CODE
         - name: SECURITY_NAME
           description: The name of the security at ABC Bank.
           tests:
@@ -22,6 +25,9 @@ models:
             where the security is traded.
           tests:
             - not_null
+            - relationships:
+                to: ref('REF_EXCHANGE_INFO_ABC_BANK')
+                field: EXCHANGE_CODE
         - name: REPORT_DATE
           description: >
             The date the report was extracted by ABC Bank.
@@ -52,6 +58,9 @@ models:
           description: The currency for the monetary amounts of the position.
           tests:
             - not_null
+            - relationships:
+                to: ref('REF_CURRENCY_INFO')
+                field: CURRENCY_CODE
         - name: ORDINAL_POSITION
           description: The position of the row within the table.
           tests:
@@ -109,12 +118,18 @@ models:
           description: The country in which this security is based.
           tests:
             - not_null
+            - relationships:
+                to: ref('REF_COUNTRY_INFO')
+                field: TWO_COUNTRY_CODE
         - name: EXCHANGE_CODE
           description: >
             The short name or code of the exchange
             where the security is traded.
           tests:
             - not_null
+            - relationships:
+                to: ref('REF_EXCHANGE_INFO_ABC_BANK')
+                field: EXCHANGE_CODE
         - name: SECURITY_HKEY
           description: Hash key identifying the keys of a given row. For internal use only.
           tests:
@@ -252,6 +267,9 @@ models:
           description: The code for the country that produces and maintains this currency.
           tests:
             - not_null
+            - relationships:
+                to: ref('ERF_COUNTRY_INFO')
+                field: TWO_COUNTRY_CODE
         - name: CURRENCY_HKEY
           description: Hash key identifying the keys of a given row. For internal use only.
           tests:

@@ -1,15 +1,29 @@
 version: 2
 seeds:
   - name: ABC_BANK_SECURITY_INFO
-    config:
-      column_types:
-        SECURITY_CODE: STRING
-        SECUIRTY_NAME: STRING
-        SECTOR: STRING
-        INDUSTRY: STRING
-        COUNTRY: STRING
-        EXCHANGE: STRING
-        LOAD_TS: TIMESTAMP
+    columns:
+    - name: SECURITY_CODE
+      type: STRING
+      tests:
+      - not_null
+      - unique
+    - name: SECURITY_NAME
+      type: STRING
+      tests:
+      - not_null
+      - not_empty
+    - name: SECTOR
+      type: STRING
+    - name: INDUSTRY
+      type: STRING
+    - name: COUNTRY
+      type: STRING
+    - name: EXCHANGE
+      type: STRING
+    - name: LOAD_TS
+      type: TIMESTAMP
+      tests:
+      - not_null
   - name: ABC_BANK_EXCHANGE_INFO
     config:
       column_types:
